@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="ap.css">
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="bootstrap/js/jquery-2.2.4.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+	
+		<div class="modal-dialog kesa-page" id="loginPage">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <input type="text" name="user" placeholder="Username" id="kesaUserName">
+					<input type="password" name="pass" placeholder="Password" id="kesaPassword">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login" id="kesaLoginBtn">
+				  
+					
+				 <div class="login-help">
+					<!-- <a href="#">Register</a> - <a href="#">Forgot Password</a> -->
+					<span class="kesa-login-error" id="kesaLoginValidationMsg"> </span>
+				  </div> 
+				</div>
+			</div>
+			
+			
+	
+	
+		<!--  LOGIN PAGE  -->
+		<div class="row kesa-page pager login-wraper" id="loginPage" >
+			<span class="lead"> Login </span>
+			<div class="row">
+				<label class="col-md-3"> User Name </label>
+				<input type="text" id="kesaUserName" class="col-md-5"/>
+			</div>
+		
+			<div class="row">
+				<label class="col-md-3"> Password </label>
+				<input type="password" id="kesaPassword"  class="col-md-5"/>
+			</div>
+			<div class="row">
+				<span class="kesa-login-error" id="kesaLoginValidationMsg"> </span>
+			</div>
+			
+			<div class="row" >
+				<div class="btn btn-default" id="kesaLoginBtn"> Login </div>
+			</div>
+		</div>
+		<!--  LOGIN PAGE   ENDs-->
+		
+		
+		
+		<!--  DASHBOARD PAGE  -->
+		<div class="row kesa-page" id="dashBoardPage" >
+			<div class="row">
+				<div class=" col-lg-3 col-md-3 col-sm-12 col-xs-12 kesa-simple-tile col-md-offset-2 kesa-simple-tile-bgodd" id="kesaDashboardNewProcess" data-map="kesa_dashboard_01">
+				
+					<div class="lead" >Initiate New  Process</div>
+					 
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  kesa-simple-tile  kesa-simple-tile-bgeven" id="kesaDashboardEalierProcess" data-map="kesa_dashboard_02">
+					
+					<div class="lead">Track Earlier Process</div>
+					 
+				</div>
+				
+			</div>
+			<div class="row">	
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 kesa-simple-tile col-md-offset-2 kesa-simple-tile-bgeven" id="kesaDashboardEditUserDetails" data-map="kesa_dashboard_03">
+					 
+					<div class="lead"> Edit User Details</div>
+					 
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 kesa-simple-tile kesa-simple-tile-bgodd" id="kesaDashboardCreateMoreUsers" data-map="kesa_dashboard_04">
+					 
+					 <div class="lead">Create More Users</div>
+				</div>
+			</div>	
+		</div>
+		<!--  DASHBOARD PAGE Ends -->
+		
+		
+		<!--  NEW PROCESS PAGE  -->
+		
+		<div class="container kesa-simple-tile-bgodd kesa-page" id="newProcessPage" >
+			<div class="row">
+				<button type="button" class="btn btn-info pull-left" id="kesaNavigateToHome">Home</button>
+			</div>	
+			<div class="container">
+			<div class="process">
+				<div class="process-row nav nav-tabs">
+					<div class="process-step">
+						<button id="process1" type="button" class="btn btn-info btn-circle"
+							data-toggle="tab" href="#menu1">
+							<i class="fa fa-info fa-3x"></i>
+						</button>
+						<p>Test Connectivity</p>
+					</div>
+					<div class="process-step">
+						<button  id="process2" type="button" class="btn btn-default btn-circle"
+							data-toggle="tab" href="#menu2">
+							<i class="fa fa-file-text-o fa-3x"></i>
+						</button>
+						<p>
+							Configuration Settings
+						</p>
+					</div>
+					<div class="process-step">
+						<button   id="process3" type="button" class="btn btn-default btn-circle"
+							data-toggle="tab" href="#menu3">
+							<i class="fa fa-image fa-3x"></i>
+						</button>
+						<p>
+							Confirmation
+						</p>
+					</div>
+					
+				</div>
+			</div>
+			<div class="tab-content">
+				<div id="menu1" class="tab-pane fade  in">
+					<h3>Connectivity</h3>
+					<p>Test connectivity with Database</p>
+					
+					<label> Server URL </label> <input type="text" id="kesaServerURL"/>
+					<span id="connectionResultMessage" class="lead">MESSAGE</span>
+					<div>
+						<button type="button" class="btn btn-default" id="kesaTestConnectionBtn">Test Connection</button>
+					</div>
+					
+				</div>
+				<div id="menu2" class="tab-pane fade in ">
+					<h3>Configure Settings</h3>
+					<p>configure - file name, date & time and extension </p>
+					
+					<div class="row" >
+						<div class="lead">
+							<span class="lead kesa-login-error" id="configurationNotFilledMsg">
+							</span>
+						
+						</div>
+						<button type="button" class="btn btn-info next-step" id="kesaFetchFileList"> Fetch  file </button>
+						Select the list 
+						<div class="radio" id="kesaFileRadioList">
+						 	<!--
+						 	 <div><input type="radio" name="optFilePathRadio" value="FileFullPath" checked="checked">FileFullPath</div>
+						 	<div><input type="radio" name="optFilePathRadio" value="FileFullPath" >FileFullPath</div>
+						 	<div><input type="radio" name="optFilePathRadio" value="FileFullPath" >FileFullPath</div>
+						 	 -->
+						</div>		
+					</div>
+					<div class="row" >
+						<label> Select Date : </label> <input type="date" id="kesaConfigDate"> 
+					</div>
+					<div class="row" >
+						<label> Select Time : </label> <input type="time" id="kesaConfigTime"> 
+					</div>
+					<div class="row" >
+						<label> Select OutPut Extension  :</label> 
+						<select class="dropdown" id="kesaExtensionRadioList">
+							<option> CSV </option>
+							<option> Excel </option>
+						</select>
+					</div>
+					<div class="row" >
+							<label> Enter Email Address :</label><textarea rows="4" cols="40" id="kesaEmailIds"></textarea>
+					</div>
+					
+					
+				</div>
+				<div id="menu3" class="tab-pane fade in ">
+					<h3>Confirmation </h3>
+					<div class="row">
+					Will trigger File :<span id="filePathConfirmation" class="dfn"> File Link URL </span><br/>
+					On Date: <span id="dateConfirmation" class="dfn">2nd June 2016</span><br/>
+					On Time: <span id="timeConfirmation" class="dfn">2:00:PM</span><br/>
+					OutPut Extension Would be : <span id="outputConfirmation" class="dfn">CSV</span><br/>
+					Email would be sent to: <span id="emailsConfirmation" class="dfn">CSV,abc@abc.com</span><br/>
+					</div>
+					<div class="row">
+					
+						<span class="lead kesa-info" id="postConfigSubmissionMsg"></span>
+					</div>
+					
+				</div>
+			</div>
+			<ul class="list-unstyled list-inline pull-right">
+						<li><button type="button" class="btn btn-default prev-step kesa-hide-me" id="kesaBackBtn">
+								<i class="fa fa-chevron-left"></i> Back
+							</button></li>
+						<li><button type="button" class="btn btn-info next-step kesa-hide-me" id="kesaNextBtn">
+								Next <i class="fa fa-chevron-right"></i>
+							</button></li>
+						<li><button type="button" class="btn btn-info next-step kesa-hide-me" id="kesaDoneBtn">
+								Done! <i class="fa fa-chevron-right"></i>
+							</button></li>	
+					</ul>	
+
+		</div>
+		</div>
+		<!--  NEW PROCESS PAGE Ends -->
+		
+		
+	</div>
+	<script type="text/javascript" src="kesa_ap.js"></script>
+	
+</body>
+</html>
