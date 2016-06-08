@@ -16,10 +16,26 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 </head>
-<body>
-	<div class="container">
+<body class="kesa-main-font">
+
 	
-		<div class="modal-dialog kesa-page" id="loginPage">
+	
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" ><span class="lead">Admin Panel</span> </a>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="container" style="padding-top:5%;">
+		<div class="row modal-dialog kesa-page" id="loginPage">
 				<div class="loginmodal-container">
 					<h1>Login to Your Account</h1><br>
 				  <input type="text" name="user" placeholder="Username" id="kesaUserName">
@@ -37,42 +53,24 @@
 			
 	
 	
-		<!--  LOGIN PAGE  -->
-		<div class="row kesa-page pager login-wraper" id="loginPage" >
-			<span class="lead"> Login </span>
-			<div class="row">
-				<label class="col-md-3"> User Name </label>
-				<input type="text" id="kesaUserName" class="col-md-5"/>
-			</div>
-		
-			<div class="row">
-				<label class="col-md-3"> Password </label>
-				<input type="password" id="kesaPassword"  class="col-md-5"/>
-			</div>
-			<div class="row">
-				<span class="kesa-login-error" id="kesaLoginValidationMsg"> </span>
-			</div>
-			
-			<div class="row" >
-				<div class="btn btn-default" id="kesaLoginBtn"> Login </div>
-			</div>
-		</div>
-		<!--  LOGIN PAGE   ENDs-->
+  	<!--  LOGIN PAGE   ENDs-->
 		
 		
 		
 		<!--  DASHBOARD PAGE  -->
-		<div class="row kesa-page" id="dashBoardPage" >
+		<div class="row kesa-page kesa-dashboard-modal" id="dashBoardPage" >
+			<div class="row pager kesa-basic-title"> <h1> DashBoard - Select Your Tasks</h1></div>
+
 			<div class="row">
 				<div class=" col-lg-3 col-md-3 col-sm-12 col-xs-12 kesa-simple-tile col-md-offset-2 kesa-simple-tile-bgodd" id="kesaDashboardNewProcess" data-map="kesa_dashboard_01">
 				
-					<div class="lead" >Initiate New  Process</div>
+					<div class="lead kesa-basic-title" > Initiate New  Process </div>
 					 
 				</div>
 				
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  kesa-simple-tile  kesa-simple-tile-bgeven" id="kesaDashboardEalierProcess" data-map="kesa_dashboard_02">
 					
-					<div class="lead">Track Earlier Process</div>
+					<div class="lead kesa-basic-title">Track Earlier Process</div>
 					 
 				</div>
 				
@@ -80,7 +78,7 @@
 			<div class="row">	
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 kesa-simple-tile col-md-offset-2 kesa-simple-tile-bgeven" id="kesaDashboardEditUserDetails" data-map="kesa_dashboard_03">
 					 
-					<div class="lead"> Edit User Details</div>
+					<div class="lead kesa-basic-title"> Edit User Details</div>
 					 
 				</div>
 				
@@ -95,7 +93,7 @@
 		
 		<!--  NEW PROCESS PAGE  -->
 		
-		<div class="container kesa-simple-tile-bgodd kesa-page" id="newProcessPage" >
+		<div class="container kesa-simple-tile-bgodd kesa-page kesa-dashboard-modal" id="newProcessPage" >
 			<div class="row">
 				<button type="button" class="btn btn-info pull-left" id="kesaNavigateToHome">Home</button>
 			</div>	
@@ -104,14 +102,14 @@
 				<div class="process-row nav nav-tabs">
 					<div class="process-step">
 						<button id="process1" type="button" class="btn btn-info btn-circle"
-							data-toggle="tab" href="#menu1">
+							data-toggle="tab" >
 							<i class="fa fa-info fa-3x"></i>
 						</button>
 						<p>Test Connectivity</p>
 					</div>
 					<div class="process-step">
 						<button  id="process2" type="button" class="btn btn-default btn-circle"
-							data-toggle="tab" href="#menu2">
+							data-toggle="tab" >
 							<i class="fa fa-file-text-o fa-3x"></i>
 						</button>
 						<p>
@@ -120,7 +118,7 @@
 					</div>
 					<div class="process-step">
 						<button   id="process3" type="button" class="btn btn-default btn-circle"
-							data-toggle="tab" href="#menu3">
+							data-toggle="tab" >
 							<i class="fa fa-image fa-3x"></i>
 						</button>
 						<p>
@@ -197,7 +195,7 @@
 					
 				</div>
 			</div>
-			<ul class="list-unstyled list-inline pull-right">
+			<ul class="list-unstyled list-inline pager">
 						<li><button type="button" class="btn btn-default prev-step kesa-hide-me" id="kesaBackBtn">
 								<i class="fa fa-chevron-left"></i> Back
 							</button></li>

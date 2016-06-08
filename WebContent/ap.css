@@ -6,6 +6,15 @@ third party
 */
 
 
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-BoldCondensed.ttf);
+}
+
+.kesa-main-font{
+	font-family: 'Roboto';
+}
+
 
 .process-step .btn:focus{outline:none}
 .process{display:table;width:100%;position:relative}
@@ -130,7 +139,13 @@ third party
   font-family: roboto;
 }
 
-.loginmodal-container h1 {
+
+.kesa-basic-title h1{
+	text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+.loginmodal-container h1  {
   text-align: center;
   font-size: 1.8em;
   font-family: roboto;
@@ -210,4 +225,16 @@ third party
 
 .login-help{
   font-size: 12px;
+}
+
+
+.kesa-dashboard-modal{
+	padding: 30px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
 }

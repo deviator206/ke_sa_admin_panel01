@@ -166,7 +166,7 @@ kesa.AdminPanelView.prototype={
 			
 		},
 		processStepDoneBtnClicked :function(){
-			this.serviceMgr.triggerConfigSubmission(this.configurationObject, this.onConfigSubmissionResponse);
+			this.serviceMgr.triggerConfigSubmission(this.configurationObject, this.onConfigSubmissionResponse.bind(this));
 			this.onConfigSubmissionResponse();
 			
 		},
@@ -174,7 +174,7 @@ kesa.AdminPanelView.prototype={
 			$("#postConfigSubmissionMsg").html("Sucessfully Submitted the configuration");
 		},
 		fetchFileListClicked :function(){
-			this.serviceMgr.triggerConnectivity({}, this.onfileNamesFetchedResponse);
+			this.serviceMgr.triggerConnectivity({}, this.onfileNamesFetchedResponse.bind(this));
 			this.onfileNamesFetchedResponse();
 			
 		},
@@ -275,7 +275,7 @@ kesa.AdminPanelView.prototype={
 		},
 		
 		testConnectivity:function(){
-			this.serviceMgr.triggerConnectivity({}, this.onConnectivityResponse);
+			this.serviceMgr.triggerConnectivity({}, this.onConnectivityResponse.bind(this));
 			this.onConnectivityResponse();
 		},
 		onConnectivityResponse:function(){
@@ -313,7 +313,7 @@ kesa.AdminPanelView.prototype={
 				this.serviceMgr.triggerLogin({
 					"userName":$("#kesaUserName").val(),
 					"userPassword":$("#kesaPassword").val()
-				}, this.onLoginResponse);
+				}, this.onLoginResponse.bind(this));
 				
 				this.onLoginResponse();
 			}
